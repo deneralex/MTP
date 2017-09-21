@@ -1,22 +1,19 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-
-int main(){
-int a,i=0;
-printf("Digite o numero");
-scanf("%d", &a);
-float d,soma1=0;
-d=1/a;
-double e, soma2;
-e=1/a;
-for(i;i<729;i++){
-soma1= soma1+d;
-soma2=soma2+d;
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int i=0, num; float a; double b;
+    float soma=0;
+    double soma2=0;
+    printf("Entre com um numero: \n");
+    scanf("%d",&num);
+    a=1.f/num; b=1./num;
+    for( i; i<729;i++)
+        {
+            soma+=a;
+            soma2+=b;
+        }
+    printf("Soma do tipo float: %.15f", soma);
+    printf("\nSoma do tipo double: %.15f", soma2);
+    return 0;
 }
-printf(" O resultado e em float %f e em double % lf ", soma1,soma2);
-return EXIT_SUCCESS;
-}
-
-
-
