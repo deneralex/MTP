@@ -19,6 +19,7 @@ double complex Z1,Z2;
 double a,b;
 printf("Entre com o numero complexo Z1( real, imaginario) :");
 scanf("%lf,%lf", &a,&b); Z1= fazComplexo(a,b,'r');
+
 printf("Entre com o numero complexo Z2( real, imaginario) :");
 scanf("%lf,%lf", &a,&b); Z2= fazComplexo(a,b,'r');
 printf("A soma desses numeros: \n");
