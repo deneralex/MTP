@@ -1,0 +1,7 @@
+--- Para colocar proxy ---
+
+git config --global http.proxy http://proxy.ufu.br:3128
+
+--- Para retirar proxy ---
+
+git config --global http.proxy ""
