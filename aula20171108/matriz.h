@@ -117,6 +117,17 @@ Matriz C=comatriz(A);
 Matriz Ct=transposta(C);
 destruirMatriz(C);
 return Ct;
-
 }
+
+Matriz Inversa(Matriz A, Matriz Ct, double det){
+Matriz I=criarMatriz(A.lin, A.col);
+int i,j;
+for(i=0; i<A.lin;i++){
+for(j=0; j<A.col; j++){
+I.m[i][j]=(1/det)*(Ct.m[i][j]);
+}
+}
+return I;
+}
+
 #endif
