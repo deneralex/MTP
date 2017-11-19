@@ -35,6 +35,11 @@ printf("A matriz A nao e inversivel! \n\n");
 }
 c=multiplicacao(I,b,c,ordem,ordem,ordem,colunabi);
 imprimirMatriz(c);
+destruirMatriz(A);
+destruirMatriz(adjA);
+destruirMatriz(I);
+destruirMatriz(c);
+destruirMatriz(b);
 return 0;
 }
 
