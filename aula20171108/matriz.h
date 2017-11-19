@@ -112,6 +112,21 @@ for(i=0; i<A.lin; i++)
 return C;
 }
 
+Matriz multiplicacao (Matriz A, Matriz B, Matriz C, int linhaA,int colunaA, int linhaB,int colunaB)
+{
+int i,j,k,acumula;
+for(k=0; k<linhaA; k++){
+    for(j=0; j<colunaB; j++){
+        acumula=0;
+    for(i=0; i<colunaA; i++){
+    acumula= acumula+A.m[k][i]*B.m[i][j];
+    }
+    C.m[k][j]=acumula;
+    }
+}
+return C;
+}
+
 Matriz adjunta(Matriz A){
 Matriz C=comatriz(A);
 Matriz Ct=transposta(C);
