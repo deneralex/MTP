@@ -25,5 +25,9 @@ imprimirMatriz(C);
 }
 else
 printf("Matrizes nao multiplicaveis! \n\n");
+destruirMatriz(A);
+destruirMatriz(B);
+destruirMatriz(C);
 return 0;
+
 }

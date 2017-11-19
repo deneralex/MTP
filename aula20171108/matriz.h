@@ -114,14 +114,15 @@ return C;
 
 Matriz multiplicacao (Matriz A, Matriz B, Matriz C, int linhaA,int colunaA, int linhaB,int colunaB)
 {
-int i,j,k,acumula;
+int i,j,k;
+double acumula;
 for(k=0; k<linhaA; k++){
     for(j=0; j<colunaB; j++){
         acumula=0;
     for(i=0; i<colunaA; i++){
     acumula= acumula+A.m[k][i]*B.m[i][j];
     }
-    C.m[k][j]=acumula;
+    C.m[k][j]= acumula;
     }
 }
 return C;
