@@ -16,6 +16,7 @@ int main()
             i++;
         }
         *(rec+i)='\0';
-        printf("***%s",rec);
-    return EXIT_SUCCESS;
+        printf("%s",rec);
+        free(rec);
+    return 0;
 }
