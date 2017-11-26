@@ -1,33 +1,37 @@
+#include <stdio.h>
 #include<stdlib.h>
-#include<stdio.h>
-#include <ctype.h>
+#include <string.h>
+
 int main()
 {
-    char * str; //declara um ponteiro para char
-    int i=0;
-    str=(char*)calloc(1,sizeof(int));//o ponteiro para char recebe um endereço na memoria reservado dinamicamente pelo calloc
-    printf("Entre com uma frase:\n");
-    while(!0)//laço infinito
-    {
-        scanf("%c", str+i);//
-        str=(char*)realloc(str, sizeof(char)*1);
-        if((str+i)==NULL)//se o valor retornado para o ponteiro for NULL
-        {
-            printf("\n\nSem memoria suficiente!\n\n");
-            return EXIT_SUCCESS;
+	char c, *str = NULL;
+	int i = 0, j = 1;
+
+	str = (char *) malloc(10 * sizeof(char) + 1);
+
+	printf("Digite o texto: ");
+
+	while ((c = getchar()) != '*' && c != EOF && c != '\0')//c e preenchido pelo getchar, enquanto o carcatere for diferente de *, c diferente do ultimo caractere e do '\0'
+	{
+		if (j == 10)
+		{
+			str = (char *) realloc(str, strlen(str) + 10 * sizeof(char) + 1);//realoca o numero de caracteres atual + 10 bytes(dez caracteres)
+			j = 1;
+		}
+		*(str + i * sizeof(char)) = c;
+		if(*(str+i)=='*'){
+        break;
         }
-        if(*(str+i)=='*')
-            break;
-        i++;
-    }
-    *(str+i)='\0';
-    while(i>=0)
+		i++;
+		j++;
+	}
+	*(str + i * sizeof(char)) = '\0';
+     while(i>=0)
     {
         *(str+i)= toupper(*(str+i));
         i--;
     }
-
-    printf("Frase salva na memoria (maiuscula): %s \n\n",str);
-    free(str);
-    return EXIT_SUCCESS;
+	printf("%s\n\n", str);
+	free(str);
+	return 0;
 }
