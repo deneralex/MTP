@@ -4,32 +4,35 @@
 #include<math.h>
 #include<string.h>
 #define N 50
-int media(int *P, int n)
+double media(double *P, double n)
 {
-int i=0,media=0;
+int i=0;
+double media1=0;
 for(i=0;i<n;i++)
 {
-media=media+P[i];
+media1=media1+P[i];
 }
-media=(media/n);
-printf("A media e %d\n",media);
-return media;
+media1=(media1/n);
+printf("A media e %lf\n",media1);
+return media1;
 }
 
-void desvio(int *P, int n,int xi)
+void desvio(double *P, double n,double xi)
 {
-int i=0, s=0;
+int i=0;
+double s=0;
 for(i=0; i<n;i++)
 {
 s=s+pow((xi-P[i]),2);
 }
 s=sqrt(s/n-1);
-printf("O desvio padrao e %d\n",s);
+printf("O desvio padrao e %lf\n",s);
 }
 
-void tamanho(int *P, int n)
+void tamanho(double *P, double n)
 {
-int maior=0,menor=0,i;
+int i=0;
+double maior=0,menor=0;
 maior=P[0];
 for(i=0; i<n; i++)
 {
@@ -46,7 +49,7 @@ if(P[i]<menor)
  menor=P[i];
 }
 }
-printf("O maior e o menor elemento do arquivo sao respectivamente %d e %d\n",maior,menor);
+printf("O maior e o menor elemento do arquivo sao respectivamente %lf e %lf\n",maior,menor);
 }
 int main(){
 int g;
@@ -59,25 +62,26 @@ case 1:
 {
 srand(time(0));
 FILE * arquivo;
-    int d,i;
-    int vet[N];
+    int i=0;
+    double d;
+    double vet[N];
     char str[N];
     fflush(stdin);
     printf("Digite o nome com o qual voce deseja salvar o arquivo!\n");
     gets(str);
     fflush(stdin);
  printf("Digite a quantidade de numeros a serem gerados! \n");
-    scanf("%d",&d);
+    scanf("%lf",&d);
 for(i=0; i<d;i++)
 {
 vet[i]= rand() % 100;
 }
-  printf("%d",vet[0]);
+  printf("%lf",vet[0]);
   arquivo = fopen(str, "wb");
 
     if(arquivo)
     {
-    fwrite(vet, sizeof(int), d, arquivo);
+    fwrite(vet, sizeof(double), d, arquivo);
     fclose(arquivo);
     }
     else {fprintf(stderr, "Arquivo não pode ser aberto!\n");}
@@ -86,25 +90,26 @@ vet[i]= rand() % 100;
 case 2:
 {
 srand(time(0));
-int f,u,cv;
-int vet2[N];
+int u=0;
+double f,cv;
+double vet2[N];
 char str1[N];
 fflush(stdin);
 printf("Digite o nome do arquivo!\n");
 gets(str1);
 fflush(stdin);
 printf("Digite a quantidade de numeros adicionais!\n");
-scanf("%d",&f);
+scanf("%lf",&f);
 FILE * continuacao;
 for(u=0; u<f;u++)
 {
 vet2[u]= rand() % 100;
 }
-printf("%d",vet2[0]);
+printf("%lf",vet2[0]);
 continuacao=fopen(str1,"a+b");
 if(continuacao)
 {
-fwrite(vet2, sizeof(int),f, continuacao);
+fwrite(vet2, sizeof(double),f, continuacao);
 fclose(continuacao);
 }
 else {fprintf(stderr, "Arquivo não pode ser aberto!\n");}
@@ -112,19 +117,20 @@ break;
 }
 case 3:
 {
-int cv,h,xi;
-int P[N];
+int h=0;
+double cv,xi;
+double P[N];
 char str3[N];
 fflush(stdin);
 printf("Digite o nome do arquivo!\n");
 gets(str3);
 printf("Digite a quantidade de pontos!\n");
-scanf("%d",&cv);
+scanf("%lf",&cv);
 FILE * arquivof;
 arquivof=fopen(str3,"rb");
 if(arquivof)
 {
-fread(P, sizeof(int),cv, arquivof);
+fread(P, sizeof(double),cv, arquivof);
 fclose(arquivof);
 }
 else {
@@ -133,7 +139,7 @@ break;
 }
 for(h=0; h<cv; h++)
 {
-printf("%d\n", P[h]);
+printf("%lf\n", P[h]);
 }
 
 xi=media(P,cv);

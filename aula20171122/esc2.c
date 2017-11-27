@@ -2,8 +2,8 @@
 #define N 50
 struct Ponto
 {
-    int x;
-    int y;
+    double x;
+    double y;
 };
 
 int main() {
@@ -18,9 +18,9 @@ int main() {
 for(i=0; i<d;i++)
 {
 printf("Digite o ponto %d na forma x,y ",i+1);
-scanf("%d %d", &vet[i].x,&vet[i].y);
+scanf("%lf %lf", &vet[i].x,&vet[i].y);
 }
-    printf("%d",vet[1].x);
+    printf("%lf",vet[1].x);
     arquivo = fopen(str, "wb");
 
     if(arquivo)
@@ -28,6 +28,9 @@ scanf("%d %d", &vet[i].x,&vet[i].y);
     fwrite(vet, sizeof(struct Ponto), d, arquivo);
     fclose(arquivo);
     }
-    else {fprintf(stderr, "Arquivo não pode ser aberto!\n");}
+    else
+    {
+    fprintf(stderr, "Arquivo não pode ser aberto!\n");
+    }
     return 0;
     }

@@ -5,15 +5,15 @@
 
 struct Ponto
 {
-int x;
-int y;
+double x;
+double y;
 };
 
 
 int main() {
 int d,i,j;
 int const I=2;
-int coordenadas[I];
+double coordenadas[I];
 coordenadas[0]=0;
 coordenadas[1]=0;
 char str[N];
@@ -32,7 +32,7 @@ return(1);
 }
 for(i=0; i<d; i++)
 {
-fprintf(stdout,"(%d,%d)\n", P[i].x, P[i].y);
+fprintf(stdout,"(%lf,%lf)\n", P[i].x, P[i].y);
 }
 for(j=0; j<d; j++)
 {
@@ -45,7 +45,7 @@ coordenadas[1]=coordenadas[1]/d;
 }
 printf("Coordenadas do centroide = ");
 for(j=0; j<2;j++){
-printf("%d ", coordenadas[j]);
+printf("%lf ", coordenadas[j]);
 }
 return 0;
 }
