@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<complex.h>
 #include<math.h>
-double complex fazComplexo(double a, double b, char c){
+double fazComplexo(double a, double b, char c){
 if(c == 'r' ||  c == 'R')
 return a + I *b;
 else

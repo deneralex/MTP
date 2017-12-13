@@ -3,7 +3,7 @@
 #include <time.h>
 int main(){
 srand(time(0));
-int numero,soma,multiplicacao;
+int numero,soma,multiplicacao,d;
 int cont=0;
 printf("Entre com o numero: ");
 scanf("%d", &numero);
@@ -11,8 +11,10 @@ printf("Digite a provavel soma");
 scanf("%d", &soma);
 printf("Digite a provavel multiplicacao");
 scanf("%d", &multiplicacao);
-if(numero%8192==0) {
- printf("Numero divisor de 8192.\n"); cont= cont+1; }
+d=(numero%8192);
+if(d==0) {
+ printf("Numero divisor de 8192 \n");
+ cont++; }
 else { printf("Numero nao e divisor de 8192.\n");}
 
 int x=rand()%100;
@@ -29,7 +31,7 @@ if(x*3==multiplicacao) {
     printf("Voce acertou!!");
     cont=cont+1;
 }
-printf(" A pontuação e :" "%d\n", cont );
+printf(" A pontuação e :" "%d\n", cont);
 return 0;
 }
 

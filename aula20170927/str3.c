@@ -10,24 +10,34 @@ char str[N];
 int i;
 printf("Digite a frase :");
 fgets(str,N,stdin);
+
 for(i=0; i<strlen(str); i++){
- if(str[i]='A');
- {str[i]='4';}
- if(str[i]='E');
-  {str[i]='3';}
-  if(str[i]='I');
-  {str[i]='1';}
-  if(str[i]='O');
-  {str[i]='0';}
-  if(str[i]='S');
-  {str[i]='5';}
-  if(str[i]='G');
-  {str[i]='6';}
+
+if(str[i]<78&&str[i]>65)
+{
+str[i]=(str[i]+13);
+}
+else
+{
+ if((str[i]>78 && str[i]<90))
+str[i]=(str[i]-13);
+}
+
+if(str[i]>97 && str[i]<110)
+{
+str[i]=(str[i]+13);
+}
+else
+{
+ if((str[i]>110 && str[i]<123))
+str[i]=(str[i]-13);
+}
+
  }
-printf("%s\n",str);
+str[i-1]= '\0';
+printf("%s\n", str);
 return EXIT_SUCCESS;
 }
 
-//if(str[i]>='a' && str[i]<'n'){str[i]=str[i]+('N'-'A');}
- //if(str[i]>='m' && str[i]<'z'){str[i]=str[i]-('N'-'A');}
+
 
