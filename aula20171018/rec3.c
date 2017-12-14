@@ -11,7 +11,7 @@ return 1;} //verdadeiro;
 }
 
 
-int mdcc(int x, int y)
+int mdc(int x, int y)
 {
   if (y==0)
 {
@@ -21,14 +21,13 @@ int mdcc(int x, int y)
 {
     return mdc(y,x % y);
 }
-}
 int mdc( int x, int y)
 {
 if(x==y || y==0){return x;}
 if(x==0){return y;}
 if(x%2==0 && y%2!=0)
 {
-return mdcc(x/2,y);
+return mdc(x/2,y);
 }
 if(y%2==0 && x%2!=0)
 {
@@ -45,12 +44,13 @@ if(y>x){
 return mdc((y-x)/2,x);
 }
 }
+}
 int main(){
 int num1, den1, den2, num2,numR, denR,a;
 printf("Entre com um numero racinal na forma num/den: ");
-scanf("%d %d", &num1, &den1);
+scanf("%d/%d", &num1, &den1);
 printf("Entre com um outro numero racinal na forma num/den: ");
-scanf("%d %d", &num2, &den2);
+scanf("%d/%d", &num2, &den2);
 if(somafracao(num1, den1,num2,den2,&numR,&denR)){
 a=mdc(numR, denR);
 printf("Resultado da soma = %d/%d\n", numR/a,denR/a);}

@@ -2,6 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 #include<conio.h>
+
 void imprime(int l, int c, char str[])
 {
 int p,i,j,a;

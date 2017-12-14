@@ -62,6 +62,14 @@ void tres(double *A, double *B)
     for(i; i<16; i++)
     {
         A[i]=(B[i]*B[i])/A[i];
-        printf("%lg\n",A[i]);
+        if(i<15)
+        {
+        printf("%.6lg,",A[i]);
+        }
+        if(i==15)
+        {
+         printf("%.6lg",A[i]);
+        }
+
     }
 }

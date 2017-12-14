@@ -18,7 +18,7 @@ int main() {
 for(i=0; i<d;i++)
 {
 printf("Digite o ponto %d na forma x,y ",i+1);
-scanf("%lf %lf", &vet[i].x,&vet[i].y);
+scanf("%lf,%lf", &vet[i].x,&vet[i].y);
 }
     printf("%lf",vet[1].x);
     arquivo = fopen(str, "wb");

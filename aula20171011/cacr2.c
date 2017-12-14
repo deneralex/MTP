@@ -2,7 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 #include<conio.h>
-
+#include<math.h>
 float delta(float a, float b, float c)
 {
 float d=0;
@@ -14,8 +14,9 @@ void Raiz(float a, float b, float c, float d)
 {
 
 float r1,r2;
-if(d>0){
-r1=(-b+sqrt(d))/2*a;
+if(d>0)
+{
+r1=(-b+sqrt(d))/(2*a);
 r2=(-b-sqrt(d))/2*a;
 printf("A raiz r1 e %f e a raiz r2 %f", r1,r2);
 }

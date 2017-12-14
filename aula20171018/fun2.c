@@ -16,10 +16,10 @@ int main()
 {
 int num1, num2, quociente,resto;
 printf("Digite os numerador e denominador :");
-scanf("%d %d", &num1, &num2);
+scanf("%d,%d", &num1, &num2);
 if(divisao(num1, num2, &quociente, &resto)==1)
 {
-printf("O quociente e %d, e o resto %d ", quociente, resto);
+printf(" %d %d ", quociente, resto);
 }
 else{
 

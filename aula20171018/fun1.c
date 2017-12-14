@@ -13,9 +13,9 @@ return 1;} //verdadeiro;
 int main(){
 int num1, den1, den2, num2,numR, denR;
 printf("Entre com um numero racinal na forma num/den: ");
-scanf("%d %d", &num1, &den1);
+scanf("%d/%d", &num1, &den1);
 printf("Entre com um outro numero racinal na forma num/den: ");
-scanf("%d %d", &num2, &den2);
+scanf("%d/%d", &num2, &den2);
 if(somafracao(num1, den1,num2,den2,&numR,&denR)){
 printf("Resultado da soma = %d/%d\n", numR,denR);}
 else

@@ -70,7 +70,7 @@ double coordenadas[p];
 int i=0,j,k,area=0;
 struct poligono a;
 a=Preenche(a);
-area=areac(a,&coordenadas);
-centroide(a,&coordenadas);
+area=areac(a,coordenadas);
+centroide(a,coordenadas);
 return 0;
 }

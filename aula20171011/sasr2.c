@@ -1,23 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+#include <ctype.h>
+#define N 256
 
-int dado() {
-	return rand()%6 + 1;
+void par( )
+{
+int i;
+for(i=0; i<=20;i++){
+if(i%2==0)
+printf("%d",i);}
 }
 
-int main() {
-    srand(time(0));
-    char c;
-    printf("Simulador de dado vs. 1.0 - Digite ENTER para rodar o dado "
-		"ou 'Q' para sair\n");
-    do {
-	scanf("%c", &c);
-	printf("... %d\n", dado());
-    } while(c != 'q' && c != 'Q');
-    printf("Obrigado pela preferencia!\n");
-    return EXIT_SUCCESS;
+void impar( )
+{
+int j;
+for(j=0; j<=20;j++){
+if(j%2 !=0)
+printf("%d",j);}
 }
+
+int main(){
+int n;
+printf("Digite 1 para par ou 2 para impar: ");
+scanf("%d", &n);
+if(n==2){
+par();}
+if(n==1){
+impar();}
+return 0;
+}
+
+
 
 
 

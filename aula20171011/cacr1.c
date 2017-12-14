@@ -1,31 +1,39 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include<string.h>
-#include<stdlib.h>
-#include<conio.h>
-void imprime(int l, int c, char str)
-{
-int p,i,j;
-for(i=0; i<l; i++)
-{
-    for(j=0; j<c; j++)
-    {
-     p=rand()%strlen(str);
-     printf("%d", p);
-    }
-}
-printf("\n");
+int eprimo(unsigned int numero) {
+	unsigned int i;
+	int verifica = 1;
+	for(i = 2; i <= numero/2; i++) // comecou do 2, entendeu pq?
+		if(numero%i == 0) {
+			verifica = 0;
+			break;
+		}
+	return verifica;
 }
 
-
-int main(){
-srand(time(0));
-char caracteres[] = ": $ # $ : 4 b . ' :. : $ # $: 4b. ':.";
-int l,c;
-printf("Digite a quantidade de linhas e a quantidade de colunas");
-scanf("%d %d", &l, &c);
-imprime(l,c,caracteres);
-return 0;
+int mostra_soma_primos(unsigned int numero) {
+	int i, possibilidades = 0;
+	for(i = 1; i <= numero/2; i++)
+		if(eprimo(i) && eprimo(numero-i)) { // entendeu pq?
+			printf("%d + %d\n", i, numero-i);
+			possibilidades++;
+		}
+	return possibilidades;
 }
 
-
-
+int main() {
+    unsigned int numero, possibilidades;
+    printf("Entre com um numero: ");
+    scanf("%u", &numero);
+    if(eprimo(numero))
+		printf("Primo!\n");
+	else {
+		possibilidades = mostra_soma_primos(numero);
+		if(possibilidades > 0)
+			printf("Sao %d possbilidades.", possibilidades);
+		else
+			printf("Não e primo nem expresso por soma de primos.\n");
+	}
+    return EXIT_SUCCESS;
+}
